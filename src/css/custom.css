@@ -1,0 +1,447 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* Custom CSS for Physical AI & Humanoid Robotics documentation */
+
+/* Premium AI/Robotics Color Palette */
+:root {
+  /* Primary Colors - Deep Navy Blue */
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1a47c5;
+  --ifm-color-primary-darkest: #0f2e75;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #4f93f7;
+  --ifm-color-primary-lightest: #6baaf9;
+
+  /* Secondary Colors - Electric Cyan */
+  --ifm-color-secondary: #06b6d4;
+  --ifm-color-secondary-dark: #0891b2;
+  --ifm-color-secondary-darker: #0e7490;
+  --ifm-color-secondary-darkest: #155e75;
+  --ifm-color-secondary-light: #0891b2;
+  --ifm-color-secondary-lighter: #0ea5e9;
+  --ifm-color-secondary-lightest: #38bdf8;
+
+  /* Background Colors - Soft Grays */
+  --ifm-color-emphasis-0: #ffffff;
+  --ifm-color-emphasis-100: #f8fafc;
+  --ifm-color-emphasis-200: #f1f5f9;
+  --ifm-color-emphasis-300: #e2e8f0;
+  --ifm-color-emphasis-400: #cbd5e1;
+  --ifm-color-emphasis-500: #94a3b8;
+  --ifm-color-emphasis-600: #64748b;
+  --ifm-color-emphasis-700: #475569;
+  --ifm-color-emphasis-800: #334155;
+  --ifm-color-emphasis-900: #1e293b;
+  --ifm-color-emphasis-1000: #0f172a;
+
+  /* Custom Variables */
+  --ifm-navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --ifm-card-border-radius: 12px;
+  --ifm-button-border-radius: 8px;
+  --ifm-global-radius: 8px;
+  --ifm-code-border-radius: 6px;
+  --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-global-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark Mode Colors */
+html[data-theme='dark'] {
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #dbeafe;
+
+  --ifm-color-secondary: #06b6d4;
+  --ifm-color-secondary-dark: #0891b2;
+  --ifm-color-secondary-darker: #0e7490;
+  --ifm-color-secondary-darkest: #155e75;
+  --ifm-color-secondary-light: #0891b2;
+  --ifm-color-secondary-lighter: #0ea5e9;
+  --ifm-color-secondary-lightest: #38bdf8;
+
+  --ifm-color-emphasis-0: #0f172a;
+  --ifm-color-emphasis-100: #1e293b;
+  --ifm-color-emphasis-200: #334155;
+  --ifm-color-emphasis-300: #475569;
+  --ifm-color-emphasis-400: #64748b;
+  --ifm-color-emphasis-500: #94a3b8;
+  --ifm-color-emphasis-600: #cbd5e1;
+  --ifm-color-emphasis-700: #e2e8f0;
+  --ifm-color-emphasis-800: #f1f5f9;
+  --ifm-color-emphasis-900: #f8fafc;
+  --ifm-color-emphasis-1000: #ffffff;
+
+  --ifm-navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: var(--ifm-navbar-shadow);
+  background-color: var(--ifm-color-emphasis-0);
+  transition: all 0.3s ease;
+}
+
+.navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar__item {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Hero Banner */
+.hero {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero--primary {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero__button {
+  background: white;
+  color: #2563eb;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero__button:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  border-color: white;
+}
+
+/* Buttons */
+.button {
+  border-radius: var(--ifm-button-border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ifm-global-shadow-xl);
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+.button--secondary {
+  background-color: var(--ifm-color-emphasis-0);
+  border: 2px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+}
+
+html[data-theme='dark'] .button--secondary {
+  background-color: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+}
+
+/* Cards */
+.card {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ifm-global-shadow-xl);
+}
+
+.card__header {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] .card__header {
+  border-bottom: 1px solid var(--ifm-color-emphasis-700);
+}
+
+/* Sidebar */
+.menu {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.menu__list-item-collapsible {
+  border-radius: var(--ifm-global-radius);
+}
+
+.menu__link {
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+html[data-theme='dark'] .menu__link:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Tables */
+.table {
+  border-radius: var(--ifm-card-border-radius);
+  overflow: hidden;
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.table thead tr {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.table th {
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+}
+
+.table td {
+  padding: 0.75rem 1rem;
+}
+
+html[data-theme='dark'] .table thead tr {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Blockquotes */
+.alert {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+}
+
+.alert--info {
+  border-left-color: var(--ifm-color-primary);
+}
+
+.alert--warning {
+  border-left-color: var(--ifm-color-secondary);
+}
+
+/* Code Blocks */
+.prism-code {
+  border-radius: var(--ifm-code-border-radius);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.prism-code::-webkit-scrollbar {
+  height: 8px;
+}
+
+.prism-code::-webkit-scrollbar-track {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.prism-code::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+}
+
+/* Admonitions */
+.theme-admonition {
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--ifm-color-emphasis-100);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] .footer {
+  background-color: var(--ifm-color-emphasis-100);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Typography */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.5rem;
+}
+
+html[data-theme='dark'] .markdown h2 {
+  border-bottom: 2px solid var(--ifm-color-emphasis-700);
+}
+
+/* Links */
+.markdown a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .navbar__inner {
+    padding: 0 0.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+    min-height: 60vh;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .button {
+    width: 100%;
+    margin: 0.25rem 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Improved code copy button */
+.theme-code-block {
+  border-radius: var(--ifm-code-border-radius);
+  overflow: hidden;
+}
+
+/* Search bar improvements */
+.navbar__search-input {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: all 0.2s ease;
+}
+
+.navbar__search-input:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+html[data-theme='dark'] .navbar__search-input {
+  background-color: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+}

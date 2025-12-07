@@ -1,55 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: N/A → 1.0.0
+Added sections: All principles and sections based on user input
+Removed sections: None
+Templates requiring updates: ⚠ pending (.specify/templates/plan-template.md, .specify/templates/spec-template.md, .specify/templates/tasks-template.md)
+Follow-up TODOs: None
+-->
+# AI/Spec-Driven Book Creation Using Docusaurus, Spec-Kit Plus, and Claude Code Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Quality and Reproducibility
+Quality, accuracy, structure, and reproducibility must guide every chapter, section, and example in the book. All content must be reproducible and verifiable by students.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Specification-Driven Development
+The entire book must be produced using specification-driven workflows with Spec-Kit Plus and Claude Code. Each chapter must be generated through: /sp.specify, /sp.clarify, /sp.plan, /sp.tasks, /sp.implement
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Technical Standards
+All examples must run on: Node 20+, Docusaurus v3+, GitHub Pages. Code samples must be minimal, correct, and tested.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Writing Standards
+Write for students learning AI-native software development with Flesch-Kincaid grade 8–10 readability. Maintain consistency in structure and tone, ensuring accuracy of all technical claims and definitions. All tutorials must work exactly as written. No hallucinated tools, commands, or frameworks.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Content Integrity
+No API keys or credentials included anywhere. No copyrighted images or text. All code and content must be original or properly attributed. No hallucinated tools, commands, or frameworks.
 
-### [PRINCIPLE_6_NAME]
+### Documentation Standards
+Use fenced code blocks for all code. Use headings consistently: H1 for chapters, H2/H3 for sections. Provide step-by-step guides.
 
+## Success Criteria
+Book builds successfully in Docusaurus with no errors. GitHub Pages deployment works without manual fixes. All chapters follow the constitution and specification workflow. Students can reproduce every command, tutorial, and example. Clear navigation, functioning sidebar, and consistent formatting.
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Deployment Standards
+Book format: Markdown, compatible with Docusaurus. Deployment target: GitHub Pages.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all other practices. All development must follow the specification-driven workflow. All PRs/reviews must verify compliance with the standards. Students must be able to reproduce every example.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
