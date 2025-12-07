@@ -8,10 +8,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://rubii.github.io',
+  url: 'https://humanoid-robotics-book-inky.vercel.app/',
   // Set the /<base> pathname under which your site is served
   // For GitHub pages deployment, it is often '/<org-name>/<repo-name>'
-  baseUrl: '/Humanoid-Robotics-Book/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   organizationName: 'Rubab Fatima', // Usually your GitHub org/user name.
