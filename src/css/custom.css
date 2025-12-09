@@ -5,27 +5,35 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* Typography System - Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* Custom CSS for Physical AI & Humanoid Robotics documentation */
 
 /* Premium AI/Robotics Color Palette */
 :root {
-  /* Primary Colors - Deep Navy Blue */
-  --ifm-color-primary: #2563eb;
-  --ifm-color-primary-dark: #1d4ed8;
-  --ifm-color-primary-darker: #1a47c5;
-  --ifm-color-primary-darkest: #0f2e75;
-  --ifm-color-primary-light: #3b82f6;
-  --ifm-color-primary-lighter: #4f93f7;
-  --ifm-color-primary-lightest: #6baaf9;
+  /* Primary Colors - Blue-Violet-Cyan Gradient */
+  --ifm-color-primary: #4F46E5; /* violet-600 */
+  --ifm-color-primary-dark: #4338CA; /* violet-700 */
+  --ifm-color-primary-darker: #3730A3; /* violet-800 */
+  --ifm-color-primary-darkest: #312E81; /* violet-900 */
+  --ifm-color-primary-light: #6366F1; /* violet-500 */
+  --ifm-color-primary-lighter: #818CF8; /* violet-400 */
+  --ifm-color-primary-lightest: #C7D2FE; /* violet-200 */
 
   /* Secondary Colors - Electric Cyan */
-  --ifm-color-secondary: #06b6d4;
-  --ifm-color-secondary-dark: #0891b2;
-  --ifm-color-secondary-darker: #0e7490;
-  --ifm-color-secondary-darkest: #155e75;
-  --ifm-color-secondary-light: #0891b2;
-  --ifm-color-secondary-lighter: #0ea5e9;
-  --ifm-color-secondary-lightest: #38bdf8;
+  --ifm-color-secondary: #06B6D4; /* cyan-500 */
+  --ifm-color-secondary-dark: #0891B2; /* cyan-600 */
+  --ifm-color-secondary-darker: #0E7490; /* cyan-700 */
+  --ifm-color-secondary-darkest: #155E75; /* cyan-800 */
+  --ifm-color-secondary-light: #0891B2; /* cyan-600 */
+  --ifm-color-secondary-lighter: #0EA5E9; /* cyan-500 */
+  --ifm-color-secondary-lightest: #38BDF8; /* cyan-400 */
+
+  /* Blue-Violet-Cyan Gradient Variables */
+  --ifm-gradient-primary: #4F46E5;
+  --ifm-gradient-secondary: #06B6D4;
+  --ifm-gradient-blue-violet-cyan: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
 
   /* Background Colors - Soft Grays */
   --ifm-color-emphasis-0: #ffffff;
@@ -42,9 +50,9 @@
 
   /* Custom Variables */
   --ifm-navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --ifm-card-border-radius: 12px;
-  --ifm-button-border-radius: 8px;
-  --ifm-global-radius: 8px;
+  --ifm-card-border-radius: 1.25rem; /* 20px */
+  --ifm-button-border-radius: 1.25rem; /* 20px */
+  --ifm-global-radius: 1.25rem; /* 20px */
   --ifm-code-border-radius: 6px;
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -53,13 +61,13 @@
 
 /* Dark Mode Colors */
 html[data-theme='dark'] {
-  --ifm-color-primary: #3b82f6;
-  --ifm-color-primary-dark: #2563eb;
-  --ifm-color-primary-darker: #1d4ed8;
-  --ifm-color-primary-darkest: #1e3a8a;
-  --ifm-color-primary-light: #60a5fa;
-  --ifm-color-primary-lighter: #93c5fd;
-  --ifm-color-primary-lightest: #dbeafe;
+  --ifm-color-primary: #6366F1; /* violet-500 */
+  --ifm-color-primary-dark: #4F46E5; /* violet-600 */
+  --ifm-color-primary-darker: #4338CA; /* violet-700 */
+  --ifm-color-primary-darkest: #312E81; /* violet-900 */
+  --ifm-color-primary-light: #818CF8; /* violet-400 */
+  --ifm-color-primary-lighter: #A5B4FC; /* violet-300 */
+  --ifm-color-primary-lightest: #C7D2FE; /* violet-200 */
 
   --ifm-color-secondary: #06b6d4;
   --ifm-color-secondary-dark: #0891b2;
@@ -90,10 +98,28 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   letter-spacing: 0.2px;
 }
+
+/* Typography System - Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Custom Variables */
+--ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+--ifm-font-weight-light: 300;
+--ifm-font-weight-normal: 400;
+--ifm-font-weight-semibold: 600;
+--ifm-font-weight-bold: 700;
+--ifm-navbar-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+--ifm-card-border-radius: 1.25rem; /* 20px */
+--ifm-button-border-radius: 1.25rem; /* 20px */
+--ifm-global-radius: 1.25rem; /* 20px */
+--ifm-code-border-radius: 6px;
+--ifm-global-shadow-lw: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+--ifm-global-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--ifm-global-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
 /* Navbar */
 .navbar {
@@ -444,4 +470,30 @@ html[data-theme='dark'] .navbar__search-input {
   background-color: var(--ifm-color-emphasis-100);
   border-color: var(--ifm-color-emphasis-300);
   color: var(--ifm-color-emphasis-900);
+}
+
+/* Glassmorphism Effect */
+.card-glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  transition: all 0.3s ease;
+}
+
+html[data-theme='dark'] .card-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html[data-theme='dark'] .card-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
 }

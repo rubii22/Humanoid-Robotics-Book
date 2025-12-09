@@ -54,10 +54,17 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
-        
+        hideOnScroll: false, // Keep navbar visible (sticky)
+        style: 'primary',
         items: [
           {
-            href: 'https://github.com/rubii',
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            href: 'https://github.com/rubii22',
             label: 'GitHub',
             position: 'right',
           },
@@ -67,24 +74,21 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Introduction',
                 to: '/docs/intro',
               },
+
             ],
           },
           {
-            title: 'Community',
+            title: 'Resources',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://x.com/DevRubabfatima',
+                label: 'GitHub',
+                href: 'https://github.com/rubii22',
               },
             ],
           },
@@ -92,13 +96,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/rubii',
+                label: 'Contact',
+                href: 'https://x.com/DevRubabfatima',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built by Rubab.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Book. Built by Rubab Fatima.`,
       },
       prism: {
         theme: require('prism-react-renderer').themes.github,
