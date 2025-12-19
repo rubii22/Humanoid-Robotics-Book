@@ -1,75 +1,60 @@
-<!--
-Sync Impact Report:
-- Version change: 1.0.0 → 1.1.0
-- Modified principles: None (new constitution for this project)
-- Added sections: Grounded Responses, Hallucination Prevention, Context Fidelity, Modularity, Agent-Oriented Reasoning
-- Removed sections: None
-- Templates requiring updates: N/A (first version)
-- Follow-up TODOs: None
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 → 1.1.0
+Modified principles: None (new constitution based on project requirements)
+Added sections: All sections (new project constitution)
+Removed sections: None (new constitution)
+Templates requiring updates: ⚠ pending - .specify/templates/plan-template.md, .specify/templates/spec-template.md, .specify/templates/tasks-template.md
+Follow-up TODOs: None
 -->
-
-# RAG Chatbot Constitution
+# Integrated RAG Chatbot for AI-Spec-Driven Book Constitution
 
 ## Core Principles
 
-### I. Grounded Responses
-All answers must be derived strictly from retrieved book content. The system must never generate responses based on information not present in the provided context, maintaining strict fidelity to the source material.
+### Spec-Driven Development Mandate
+All implementation must strictly follow written specifications; No deviations from approved specs without formal amendment process; Every feature and change must be documented in spec before implementation begins.
 
-### II. Hallucination Prevention
-The system must explicitly refuse to answer if the information is not present in the provided context. This prevents generation of fabricated or incorrect information that could mislead users.
+### Agentic Architecture Requirement
+Must use Agent class from OpenAI Agents SDK; Must use Runner.run_sync and/or Runner.run_stream; Must use Sessions for conversation state and persistent chat history; No custom or external memory systems allowed.
 
-### III. Context Fidelity
-When user-selected text is provided, answers must rely exclusively on that text and nothing else. The system must maintain strict adherence to the provided context constraints.
+### Content Grounding and Zero Hallucination
+All answers must be derived from retrieved book content only; Deterministic RAG behavior with zero hallucinations; Strict adherence to retrieved context; Answers must be traceable to specific book content.
 
-### IV. Modularity
-Backend architecture must be clean, extensible, and frontend-agnostic. Components must be separable and independently testable to allow future frontend integration and maintenance.
+### Reproducible Configuration
+Reproducibility via environment-variable-based configuration; Model selection configurable via environment variables only; Clear separation of configuration from code; All deployments must be reproducible from environment settings.
 
-### V. Agent-Oriented Reasoning
-Use agent-style orchestration patterns without relying on external proprietary services. Implementation should follow orchestration patterns that enable sophisticated reasoning while maintaining independence from specific vendor APIs.
+### Clear System Separation
+Clear separation of frontend, API, vector store, and database; Well-defined interfaces between components; Loose coupling between system layers; Each component must be independently deployable and testable.
 
-### VI. Deterministic Retrieval
-Document ingestion must preserve structural metadata (chapter, section, paragraph). Chunking must be deterministic and reproducible, and vector similarity search must be traceable and debuggable.
+### Transparent Query Scoping
+Transparency between full-book queries and selected-text-only queries; User-selected text becomes explicit context boundary; Models must not reference content outside specified scope; Any scope violation is considered a hard failure.
 
-## Technology Standards
+## Technical Requirements
 
-### Backend Framework
-Use FastAPI for building the backend service due to its performance, async capabilities, and automatic API documentation generation.
+### Mandatory Technical Stack
+Backend must use: FastAPI (Python), OpenAI Agents SDK, Neon Serverless Postgres, Qdrant Cloud Free Tier, OpenAI Embeddings API, LiteLLM for multi-model support.
+Frontend must use: Docusaurus (book site), Embedded React chatbot component, User text-selection capture for scoped queries.
 
-### Embeddings and LLM
-Use Cohere Embeddings API for document vectorization and Cohere Generate/Command models for text generation, maintaining consistency in the language processing pipeline.
+### Model Support Requirements
+Model selection must be configurable via environment variables only with required support for OpenAI GPT models (default: gpt-4-turbo-preview) and Google Gemini models via LiteLLM.
+Required environment variables: USE_GEMINI=true|false, CHAT_MODEL=gemini-2.0-flash-exp | gpt-4-turbo-preview.
 
-### Databases
-Use Qdrant Cloud (Free Tier) for vector storage and search, and Neon Serverless Postgres for relational data storage, leveraging cloud-native scalability and management.
+### RAG Requirements
+All book content must be loaded from: book-source/docs/*.md; All content must be embedded and stored in Qdrant Cloud; Retrieval must occur before every response; Generation must be strictly limited to retrieved context.
 
-### Orchestration
-Implement agent-style orchestration using patterns inspired by OpenAI Agents/ChatKit SDK concepts, focusing on the logical flow without direct API dependencies.
+### Selected Text Query Rules
+User-selected text must be explicitly passed to the backend; Selected text becomes the only allowed context; The model must not reference global book content; Any scope violation is considered a hard failure.
 
-## Answering Constraints
+## API Contract Compliance
 
-### Content Restrictions
-Answers must never include information not present in retrieved context. If confidence is low or context is insufficient, the assistant must respond with a refusal. Responses must be clear, concise, and technically accurate, with citations referencing book sections or chapters when applicable.
+### Mandatory Endpoints
+The system must implement the following endpoints: POST /api/chat, POST /api/chat/selected-text, GET /api/chat/history, POST /api/chat/clear, POST /api/embeddings/ingest.
+All API implementations must follow the specified contracts exactly with no deviations.
 
-### Retrieval Modes
-The system must support two mandatory retrieval modes: Global Book Retrieval for general queries and User-Selected Text Retrieval for context-constrained queries, with strict enforcement of the latter's constraints.
-
-## Security & Reliability
-
-### Secure Configuration
-API keys must be loaded securely via environment variables. The system must implement appropriate rate limiting and comprehensive error handling to maintain stability.
-
-### Resilience
-The system must be resilient to malformed input and empty retrieval results, responding gracefully to various error conditions without compromising service availability.
-
-## Development Constraints
-
-### Scope Limitations
-Frontend development is explicitly excluded from this phase. Focus solely on creating a robust, well-documented backend that is ready for future frontend integration.
-
-### API Design
-The backend must expose clean, well-documented API endpoints following RESTful principles and including comprehensive error handling to facilitate seamless frontend integration.
+### Data Persistence Rules
+Chat history must be stored in Neon Postgres; History must be associated with user sessions; All conversation data must be retrievable via the API; Data retention policies must be configurable.
 
 ## Governance
 
-This constitution serves as the definitive guide for all technical decisions in the RAG Chatbot project. All implementation must comply with these principles. Changes to this constitution require explicit documentation, approval from project stakeholders, and a migration plan for existing code. All pull requests must be reviewed for compliance with these principles before merging.
+Constitution governs all development activities; All code changes must comply with these principles; Amendments require formal documentation and approval process; Implementation must follow spec-driven development workflow using Spec-Kit Plus and Claude Code with no manual coding.
 
-**Version**: 1.1.0 | **Ratified**: 2025-01-01 | **Last Amended**: 2025-12-17
+**Version**: 1.1.0 | **Ratified**: 2025-12-19 | **Last Amended**: 2025-12-19
