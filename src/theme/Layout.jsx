@@ -1,16 +1,16 @@
 import React from 'react';
 import OriginalLayout from '@theme-original/Layout';
-import FunctionalChatbot from '../components/Chatbot/FunctionalChatbot';
+import ChatWidget from '../components/chat_widget';
 
 /**
  * Custom Layout component that wraps the default Docusaurus layout
- * and adds the functional chatbot component to all pages
+ * and adds the chatbot component to all pages
  */
 export default function Layout(props) {
   return (
     <OriginalLayout {...props}>
       {props.children}
-      <FunctionalChatbot />
+      <ChatWidget />
     </OriginalLayout>
   );
 }
